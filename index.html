@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <!-- Define a codificação de caracteres para aceitar acentos e ç -->
+    <meta charset="UTF-8">
+    
+    <!-- Garante que a página fique responsiva (se adapte a telas de celular) -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Mitos e Verdades sobre o Surf</title>
+    
+    <!-- Link para conectar este arquivo HTML ao arquivo CSS externo -->
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+
+    <!-- A tag <section> agrupa todo o conteúdo relacionado à seção de Destaques -->
+    <section class="secao-destaques">
+        
+        <!-- Tag <h1> para o título principal da seção -->
+        <h1 class="titulo-secao">Verificação de Fatos: Mitos e Verdades do Surf</h1>
+
+        <!-- Container para agrupar os 3 cards/itens e aplicar o Flexbox no CSS -->
+        <div class="container-cards">
+
+            <!-- Card 1 (Mito) -->
+            <article class="card mito">
+                <!-- Tag <h2> para o subtítulo do item -->
+                <h2>Mito</h2>
+                <!-- Tag <p> representa um parágrafo de texto -->
+                <p><strong>Fact-checking:</strong> "Não dá para aprender a surfar se você não começou quando era criança."</p>
+                <p><strong>A verdade:</strong> O surf pode ser praticado por pessoas de todas as idades! Com a orientação correta e pranchas adequadas para iniciantes, qualquer pessoa pode aprender.</p>
+            </article>
+
+            <!-- Card 2 (Verdade) -->
+            <article class="card verdade">
+                <h2>Verdade</h2>
+                <p><strong>Fact-checking:</strong> "Saber nadar bem é um requisito essencial para começar no surf."</p>
+                <p><strong>A verdade:</strong> O oceano é dinâmico. Ter boa noção de natação e segurança aquática é fundamental para se proteger e curtir o esporte com tranquilidade.</p>
+            </article>
+
+            <!-- Card 3 (Mito) -->
+            <article class="card mito">
+                <h2>Mito</h2>
+                <p><strong>Fact-checking:</strong> "Pranchas maiores são apenas para iniciantes e não servem para quem quer evoluir."</p>
+                <p><strong>A verdade:</strong> Pranchas maiores (como os Longboards) oferecem mais estabilidade e facilidade para entrar nas ondas, sendo usadas tanto por iniciantes quanto por surfistas avançados!</p>
+            </article>
+
+        </div> <!-- Fim da div container-cards -->
+
+    </section> <!-- Fim da section secao-destaques -->
+
+</body>
+</html>/* RESET BÁSICO E CONFIGURAÇÕES GERAIS */
+
+/* Seleciona todos os elementos para remover margens padrão dos navegadores */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Inclui bordas e espaçamentos dentro do tamanho total do elemento */
+}
+
+/* Define a fonte padrão e a cor de fundo de toda a página */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f8ff; /* Azul bem claro lembrando água */
+    padding: 20px;
+    color: #333; /* Cor do texto escura para garantir uma boa leitura/acessibilidade */
+}
+
+/* ESTILIZAÇÃO DA SEÇÃO PRINCIPAL */
+
+.secao-destaques {
+    max-width: 1100px; /* Limita a largura máxima da seção */
+    margin: 0 auto; /* Centraliza a seção na tela na horizontal */
+    text-align: center;
+}
+
+/* Título principal da seção */
+.titulo-secao {
+    color: #006699;
+    margin-bottom: 30px;
+    font-size: 2rem;
+}
+
+/* USO DO FLEXBOX NO CONTAINER DOS CARDS */
+
+.container-cards {
+    /* Ativa o Flexbox para organizar os elementos filhos (.card) */
+    display: flex;
+    
+    /* Permite que os cards passem para a linha de baixo se não couberem na tela */
+    flex-wrap: wrap; 
+    
+    /* Distribui os cards com espaço igual entre eles */
+    justify-content: space-between; 
+    
+    /* Adiciona um espaço de 20px entre os cards */
+    gap: 20px; 
+}
+
+/* ESTILIZAÇÃO DOS CARDS (ITENS INDIVIDUAIS) */
+
+.card {
+    background-color: #ffffff;
+    border-radius: 8px; /* Arredonda os cantos do card */
+    padding: 20px;
+    
+    /* Configuração Flexbox para cada card individual */
+    flex: 1; /* Faz com que todos os cards tentem ter o mesmo tamanho */
+    min-width: 250px; /* Garante uma largura mínima antes de quebrar para a próxima linha */
+    
+    /* Adiciona uma sombra suave para dar profundidade */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    
+    text-align: left;
+}
+
+/* Estilo para os subtítulos dentro de cada card */
+.card h2 {
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+}
+
+/* Estilo para os parágrafos */
+.card p {
+    margin-bottom: 10px;
+    line-height: 1.5; /* Aumenta o espaçamento entre linhas para facilitar a leitura */
+}
+
+/* DIFERENCIAÇÃO VISUAL: MITOS E VERDADES */
+
+/* Destaque com borda vermelha/rosa para os Mitos */
+.card.mito {
+    border-top: 5px solid #e74c3c;
+}
+
+.card.mito h2 {
+    color: #e74c3c;
+}
+
+/* Destaque com borda verde para as Verdades */
+.card.verdade {
+    border-top: 5px solid #2ecc71;
+}
+
+.card.verdade h2 {
+    color: #2ecc71;
+}
